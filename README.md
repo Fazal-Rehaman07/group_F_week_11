@@ -91,7 +91,7 @@ ok      github.com/Fazal-Rehaman07/group_F_week_11      1.434s
   - Include edge cases, such as division by zero, to ensure error handling works as intended.
 
 - **Structured Test for Division**:
-  - Uses a table-driven approach to test multiple cases (e.g., valid division and division by zero).
+  - Uses a struct to test multiple cases (e.g., valid division and division by zero).
   - Confirms error handling for invalid inputs.
 
 ### **Benchmark Design**
