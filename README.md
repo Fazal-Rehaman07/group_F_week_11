@@ -56,11 +56,15 @@ Sample output for test file:
 === RUN   TestSquare
 --- PASS: TestSquare (0.00s)
 === RUN   TestDivide
-    calculator_test.go:55: Divide(10, 2) PASS
-    calculator_test.go:50: Divide(10, 0) FAILED: division by zero
---- FAIL: TestDivide (0.00s)
-FAIL
-exit status 1
+    calculator_test.go:68: Divide(10, 2) PASS
+    calculator_test.go:53: Expected error for Divide(10, 0): division by zero
+--- PASS: TestDivide (0.00s)
+=== RUN   TestSquareRoot
+    calculator_test.go:103: SquareRoot(25.000000) PASS
+    calculator_test.go:88: Expected error for SquareRoot(-9.000000): cannot calculate square root of a negative number
+--- PASS: TestSquareRoot (0.00s)
+PASS
+ok      github.com/Fazal-Rehaman07/group_F_week_11      0.297s
 
 ```
 
