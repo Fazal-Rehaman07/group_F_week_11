@@ -20,7 +20,7 @@ This project implements a simple Calculator written in GoLang. It provides funct
    ```bash
    go run calculator.go
    ```
-   This will run the Simple Calculator with sample inputs. You can change the inputs inside main func in the calculator.go file
+   This will run the Simple Calculator with sample inputs. You can change the inputs inside main function in the calculator.go file
 
 ---
 
@@ -33,6 +33,8 @@ go test -v
 ```
 
 #### **Run Benchmarks**
+Comment line 44 i.e the Divide by zero test case {10, 0, 0} to prevent Failure.  
+
 To run Benchmark tests, run:
 ```bash
 go test -bench=.
@@ -43,13 +45,7 @@ go test -bench=.
 ### **Expected Output of the Tests**
 
 #### **Unit Test Output**
-If all tests pass, the output will be:
-```
-PASS
-ok  	<module-name>	<execution-time>
-```
-
-In case of test failures, detailed error messages will indicate the failed test case, such as:
+Sample output for test file:
 ```
 === RUN   TestAdd
 --- PASS: TestAdd (0.00s)
