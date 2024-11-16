@@ -7,7 +7,7 @@ func TestAdd(t *testing.T) {
 	result := Addition(2, 3)
 	expected := 5
 	if result != expected {
-		t.Errorf("Add(2, 3) results in %d, but expected %d", result, expected)
+		t.Errorf("Addition(2, 3) results in %d, but expected %d", result, expected)
 	}
 }
 
@@ -15,7 +15,7 @@ func TestSubtract(t *testing.T) {
 	result := Subtraction(2, 3)
 	expected := -1
 	if result != expected {
-		t.Errorf("Subtract(2, 3) results in %d, but expected %d", result, expected)
+		t.Errorf("Subtraction(2, 3) results in %d, but expected %d", result, expected)
 	}
 }
 
@@ -23,7 +23,7 @@ func TestMultiply(t *testing.T) {
 	result := Multiplication(2, 3)
 	expected := 6
 	if result != expected {
-		t.Errorf("Multiply(2, 3) results in %d, but expected %d", result, expected)
+		t.Errorf("Multiplication(2, 3) results in %d, but expected %d", result, expected)
 	}
 }
 

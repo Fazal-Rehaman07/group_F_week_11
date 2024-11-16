@@ -17,7 +17,7 @@ func Multiplication(a, b int) int {
 	return a * b
 }
 
-// Divide returns the quotient of a divided by b.
+// Divide returns the quotient of a / b.
 // Returns an error if b is 0.
 func Divide(a, b int) (int, error) {
 	if b == 0 {
