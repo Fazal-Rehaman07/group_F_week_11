@@ -39,20 +39,69 @@ func TestDivide(t *testing.T) {
 	tests := []struct {
 		a, b     int
 		expected int
+		hasError bool
 	}{
-		{10, 2, 5},
-		//{10, 0, 0},
+		{10, 2, 5, false},
+		{10, 0, 0, true},
 	}
 
 	for _, tt := range tests {
 		result, err := Divide(tt.a, tt.b)
-		if err != nil {
-			t.Fatalf("Divide(%d, %d) FAILED: %v", tt.a, tt.b, err)
+
+		// Log the expected error without failing the test
+		if tt.hasError && err != nil {
+			t.Logf("Expected error for Divide(%d, %d): %v", tt.a, tt.b, err)
 		}
-		if result != tt.expected {
-			t.Fatalf("Divide(%d, %d) results in %d, but expected %d", tt.a, tt.b, result, tt.expected)
+
+		// Check unexpected error state
+		if (err != nil) != tt.hasError {
+			t.Errorf("Divide(%d, %d) Expected Error = %v; But Got: %v", tt.a, tt.b, tt.hasError, err)
 		}
-		t.Logf("Divide(%d, %d) PASS ", tt.a, tt.b)
+
+		// Validate the result only if no error is expected
+		if !tt.hasError && result != tt.expected {
+			t.Errorf("Divide(%d, %d) results in %d, but expected %d", tt.a, tt.b, result, tt.expected)
+		}
+
+		// Log success for valid cases
+		if !tt.hasError && err == nil {
+			t.Logf("Divide(%d, %d) PASS", tt.a, tt.b)
+		}
+	}
+}
+
+func TestSquareRoot(t *testing.T) {
+	tests := []struct {
+		a        float64
+		expected float64
+		hasError bool
+	}{
+		{25, 5, false},
+		{-9, 0, true},
+	}
+
+	for _, tt := range tests {
+		result, err := SquareRoot(tt.a)
+
+		// Log the expected error
+		if tt.hasError && err != nil {
+			t.Logf("Expected error for SquareRoot(%f): %v", tt.a, err)
+		}
+
+		// Check unexpected error state
+		if (err != nil) != tt.hasError {
+			t.Errorf("SquareRoot(%f) Expected Error: %v; But Got: %v", tt.a, tt.hasError, err)
+		}
+
+		// Validate the result if no error was expected
+		if !tt.hasError && result != tt.expected {
+			t.Errorf("SquareRoot(%f) results in %f, but expected %f", tt.a, result, tt.expected)
+		}
+
+		// Log success for valid cases
+		if !tt.hasError && err == nil {
+			t.Logf("SquareRoot(%f) PASS", tt.a)
+		}
 	}
 }
 
@@ -84,5 +133,11 @@ func BenchmarkSquare(b *testing.B) {
 func BenchmarkDivide(b *testing.B) {
 	for i := 0; i < b.N; i++ {
 		Divide(25, 5)
+	}
+}
+
+func BenchmarkSquareRoot(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		SquareRoot(625)
 	}
 }
