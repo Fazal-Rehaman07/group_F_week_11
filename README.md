@@ -75,13 +75,14 @@ goos: windows
 goarch: amd64
 pkg: github.com/Fazal-Rehaman07/group_F_week_11
 cpu: 13th Gen Intel(R) Core(TM) i5-13500H
-BenchmarkAdd-16                 1000000000               0.1830 ns/op
-BenchmarkSubtract-16            1000000000               0.1838 ns/op
-BenchmarkMultiply-16            1000000000               0.1850 ns/op
-BenchmarkSquare-16              1000000000               0.1835 ns/op
-BenchmarkDivide-16              1000000000               0.1937 ns/op
+BenchmarkAdd-16                 1000000000               0.1685 ns/op
+BenchmarkSubtract-16            1000000000               0.1705 ns/op
+BenchmarkMultiply-16            1000000000               0.2054 ns/op
+BenchmarkSquare-16              1000000000               0.1646 ns/op
+BenchmarkDivide-16              1000000000               0.1878 ns/op
+BenchmarkSquareRoot-16          1000000000               0.1735 ns/op
 PASS
-ok      github.com/Fazal-Rehaman07/group_F_week_11      1.434s
+ok      github.com/Fazal-Rehaman07/group_F_week_11      1.522s
 
 ```
 
