@@ -32,9 +32,7 @@ To run the unit tests, execute the following command:
 go test -v
 ```
 
-#### **Run Benchmarks**
-Comment line 44 i.e the Divide by zero test case {10, 0, 0} to prevent Failure.  
-
+#### **Run Benchmarks**  
 To run Benchmark tests, run:
 ```bash
 go test -bench=.
@@ -56,11 +54,15 @@ Sample output for test file:
 === RUN   TestSquare
 --- PASS: TestSquare (0.00s)
 === RUN   TestDivide
-    calculator_test.go:55: Divide(10, 2) PASS
-    calculator_test.go:50: Divide(10, 0) FAILED: division by zero
---- FAIL: TestDivide (0.00s)
-FAIL
-exit status 1
+    calculator_test.go:68: Divide(10, 2) PASS
+    calculator_test.go:53: Expected error for Divide(10, 0): division by zero
+--- PASS: TestDivide (0.00s)
+=== RUN   TestSquareRoot
+    calculator_test.go:103: SquareRoot(25.000000) PASS
+    calculator_test.go:88: Expected error for SquareRoot(-9.000000): cannot calculate square root of a negative number
+--- PASS: TestSquareRoot (0.00s)
+PASS
+ok      github.com/Fazal-Rehaman07/group_F_week_11      0.297s
 
 ```
 
@@ -71,13 +73,14 @@ goos: windows
 goarch: amd64
 pkg: github.com/Fazal-Rehaman07/group_F_week_11
 cpu: 13th Gen Intel(R) Core(TM) i5-13500H
-BenchmarkAdd-16                 1000000000               0.1830 ns/op
-BenchmarkSubtract-16            1000000000               0.1838 ns/op
-BenchmarkMultiply-16            1000000000               0.1850 ns/op
-BenchmarkSquare-16              1000000000               0.1835 ns/op
-BenchmarkDivide-16              1000000000               0.1937 ns/op
+BenchmarkAdd-16                 1000000000               0.1685 ns/op
+BenchmarkSubtract-16            1000000000               0.1705 ns/op
+BenchmarkMultiply-16            1000000000               0.2054 ns/op
+BenchmarkSquare-16              1000000000               0.1646 ns/op
+BenchmarkDivide-16              1000000000               0.1878 ns/op
+BenchmarkSquareRoot-16          1000000000               0.1735 ns/op
 PASS
-ok      github.com/Fazal-Rehaman07/group_F_week_11      1.434s
+ok      github.com/Fazal-Rehaman07/group_F_week_11      1.522s
 
 ```
 
