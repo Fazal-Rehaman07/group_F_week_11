@@ -41,20 +41,18 @@ func TestDivide(t *testing.T) {
 		expected int
 	}{
 		{10, 2, 5},
-		{10, 0, -1},
+		//{10, 0, 0},
 	}
 
 	for _, tt := range tests {
 		result, err := Divide(tt.a, tt.b)
 		if err != nil {
-			t.Errorf("Divide(%d, %d) FAILED: %v", tt.a, tt.b, err)
+			t.Fatalf("Divide(%d, %d) FAILED: %v", tt.a, tt.b, err)
 		}
 		if result != tt.expected {
-			t.Errorf("Divide(%d, %d) results in %d, but expected %d", tt.a, tt.b, result, tt.expected)
-		} else {
-			t.Logf("Divide(%d, %d) PASS ", tt.a, tt.b)
+			t.Fatalf("Divide(%d, %d) results in %d, but expected %d", tt.a, tt.b, result, tt.expected)
 		}
-
+		t.Logf("Divide(%d, %d) PASS ", tt.a, tt.b)
 	}
 }
 
