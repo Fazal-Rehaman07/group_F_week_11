@@ -33,7 +33,8 @@ go test -v
 ```
 
 #### **Run Benchmarks**
-Comment line 44 i.e the Divide by zero test case {10, 0, 0} to prevent Failure.
+Comment line 44 i.e the Divide by zero test case {10, 0, 0} to prevent Failure.  
+
 To run Benchmark tests, run:
 ```bash
 go test -bench=.
